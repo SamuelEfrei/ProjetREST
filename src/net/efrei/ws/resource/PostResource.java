@@ -18,6 +18,7 @@ import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.UriInfo;
 
 import net.efrei.ws.model.Post;
+import net.efrei.ws.service.ItemService;
 import net.efrei.ws.service.PostService;
 import net.efrei.ws.service.UserService;
 
@@ -27,6 +28,7 @@ import net.efrei.ws.service.UserService;
 public class PostResource {
 
 	public UserService userService = new UserService();
+	public ItemService itemService = new ItemService();
 	public PostService postService = new PostService();
 
 	@GET

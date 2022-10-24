@@ -65,7 +65,7 @@ public class PostService {
 	public List<Post> getAllPostsByCategory(String category){
 		List<Post> postsByCategory = new ArrayList<>();
 		for (Post post : posts.values()) {
-			if (post.getCategory() == category) {
+			if (post.getCategory().contentEquals(category)) {
 				postsByCategory.add(post);
 			}
 		}
