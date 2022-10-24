@@ -26,7 +26,7 @@ public class PostService {
 		posts.put(6L, new Post(6L, users.get("baptiste"), items.get("Le seigneur des anneaux: le retour du roi"),"movie",4.0f,new Date(1056557417132L)));
 	}
 	
-	public List<Post> getAllPosts(){
+	public ArrayList<Post> getAllPosts(){
 		return new ArrayList<Post>(posts.values());
 	}
 	

@@ -40,14 +40,14 @@ public class ItemResource {
 	}
 	
 	@PUT
-	@Path("/secured/{item}")
+	@Path("/{item}")
 	public Item updateItem(@PathParam("item") String name, Item item) {
 		item.setName(name);
 		return itemService.updateItem(item);
 	}
 	
 	@DELETE
-	@Path("/secured/{item}")
+	@Path("/{item}")
 	public void deleteItem(@PathParam("item") String name) {
 		itemService.removeItem(name);
 	}

@@ -39,14 +39,14 @@ public class UserResource {
 	}
 	
 	@PUT
-	@Path("/secured/{username}")
+	@Path("/{username}")
 	public User updateUser(@PathParam("username") String username, User user) {
 		user.setUsername(username);
 		return userService.updateUser(user);
 	}
 	
 	@DELETE
-	@Path("/secured/{username}")
+	@Path("/{username}")
 	public void deleteUser(@PathParam("username") String username) {
 		userService.removeUser(username);
 	}

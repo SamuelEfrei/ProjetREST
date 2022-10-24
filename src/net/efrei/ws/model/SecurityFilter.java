@@ -38,8 +38,27 @@ public class SecurityFilter implements ContainerRequestFilter{
 				String username = tokenizer.nextToken();
 				String password = tokenizer.nextToken();
 				
+				String checker = requestContext.getUriInfo().getPath();
+				char a = 0;
+				int cpt = 1;
+				String res = "";
+				while (a != '/') {
+					char b = checker.charAt(checker.length() - cpt);
+					a = b;
+					if (a != '/') {
+						res = res + a;
+					}else {
+						break;
+					}
+					cpt = cpt + 1;
+				}
+				StringBuilder in = new StringBuilder();
+				in.append(res);
+				in.reverse();
+				Long l = Long.parseLong(in.toString());
+				
 				for (Post post : posts.values()) {
-					if (post.getUser().getUsername().contentEquals(username) && post.getUser().getPassword().contentEquals(password)) {
+					if (post.getUser().getUsername().contentEquals(username) && post.getUser().getPassword().contentEquals(password) && post.getId()==l) {
 						return;
 					}
 				}

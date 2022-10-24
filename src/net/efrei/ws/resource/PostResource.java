@@ -1,6 +1,7 @@
 package net.efrei.ws.resource;
 
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.ws.rs.Consumes;
@@ -29,7 +30,7 @@ public class PostResource {
 	public PostService postService = new PostService();
 
 	@GET
-	public List<Post> getPosts(){
+	public ArrayList<Post> getPosts(){
 		return postService.getAllPosts();
 	}
 	
